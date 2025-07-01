@@ -217,9 +217,12 @@ This research framework is released under the MIT License. The comprehensive doc
 ---
 
 **Research Framework Version**: 1.0  
-**Lead Researcher**: Canberk Duman  
-**Supervisor**: Doç. Dr. Süleyman Eken  
+**Researchers**: Canberk Duman and Asst. Prof. Dr. Suleyman Eken (Supervisor)
 **Institution**: Kocaeli University, Department of Information Systems Engineering  
 **Year**: 2025
+
+## 🙏 Acknowledgments
+
+This research is supported by **TÜBİTAK 1005** (Türkiye Bilimsel ve Teknolojik Araştırma Kurumu).
 
 For questions, issues, or collaboration opportunities, please refer to the detailed documentation in each module or contact the research team through the academic institution.

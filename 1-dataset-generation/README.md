@@ -260,7 +260,7 @@ The pattern generation framework supports extensible development:
 3. **Validation Methods**: Add statistical tests in `DataProcessor`
 4. **Visualization**: Enhance plotting capabilities in `PatternPlotter`
 
-## 📚 Related Work
+## 📚 Related Works
 
 This framework builds upon and validates against:
 - **Kubernetes HPA**: Official horizontal pod autoscaling mechanisms
