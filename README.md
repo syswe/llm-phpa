@@ -2,7 +2,7 @@
 
 ## 🎯 Project Overview
 
-This repository contains the complete implementation and research framework for **"KUBERNETES ÜZERİNDE TAHMİN ALGORİTMALARI İLE YÜKSEK ÖLÇEKLENEBİLİRLİK"** - a comprehensive master thesis research project that establishes foundational components for intelligent Kubernetes autoscaling through integration of advanced machine learning techniques, sophisticated hyperparameter optimization frameworks, and automated pattern recognition capabilities.
+This repository contains the complete implementation and research framework for **"LLM Pattern Recognition for Predictive Horizontal Pod Autoscaling"** - a comprehensive master thesis research project that establishes foundational components for intelligent Kubernetes autoscaling through integration of advanced machine learning techniques, sophisticated hyperparameter optimization frameworks, and automated pattern recognition capabilities.
 
 ### 🔬 Research Context
 
