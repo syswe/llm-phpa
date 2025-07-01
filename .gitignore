@@ -1,0 +1,31 @@
+*.csv
+*.json
+*.log
+*summary.png
+# python3
+*.pyc
+.pyo
+.pyd
+.pyw
+.pyz
+.pywz
+.pyzw
+.pyzwz
+.pyzwz
+__pycache__/
+
+*.csv
+
+*plot.png
+
+# macos
+
+.DS_Store
+
+# vscode
+
+.vscode/
+
+# latex
+
+*.aux

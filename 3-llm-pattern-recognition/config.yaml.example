@@ -1,0 +1,72 @@
+# Enhanced PHPA Benchmark Configuration
+# Copy this file to config.yaml and modify as needed
+
+# General Settings
+enabled_llms:
+  - gemini
+  - qwen
+  - grok
+
+analysis_methods:
+  - text
+  - visual
+
+pattern_types:
+  - seasonal
+  - growing
+  - burst
+  - onoff
+  - chaotic
+  - stepped
+
+# Dataset Configuration
+samples_per_pattern: 3
+max_rows_per_example: 500
+output_dir: benchmark_results
+
+# LLM API Configurations
+gemini_config:
+  api_key: ${GEMINI_API_KEY}  # Set via environment variable
+  model_name: gemini-2.0-flash
+  base_url: ""  # Will be set automatically
+  max_tokens: 1000
+  temperature: 0.1
+  timeout: 60
+  max_retries: 3
+  retry_delay: 2.0
+
+qwen_config:
+  api_key: ${QWEN_API_KEY}  # Set via environment variable
+  model_name: qwen-turbo
+  base_url: ""  # Will be set automatically
+  max_tokens: 1000
+  temperature: 0.1
+  timeout: 60
+  max_retries: 3
+  retry_delay: 2.0
+
+grok_config:
+  api_key: ${GROK_API_KEY}  # Set via environment variable
+  model_name: grok-beta
+  base_url: ""  # Will be set automatically
+  max_tokens: 1000
+  temperature: 0.1
+  timeout: 60
+  max_retries: 3
+  retry_delay: 2.0
+
+# Evaluation Settings
+delay_between_calls: 5.0
+timeout_seconds: 60
+max_retries: 3
+
+# Dataset Loading Settings (from 1-dataset-generation module)
+dataset_dir: pattern-examples
+temporal_resolution_minutes: 15
+dataset_duration_days: 35
+train_test_split: 0.8
+
+# Advanced Settings
+verbose_logging: false
+generate_visualizations: true
+export_raw_data: true 

@@ -1,0 +1,29 @@
+# Core dependencies for Enhanced PHPA Benchmark
+pandas>=1.5.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+scipy>=1.9.0
+
+# HTTP requests and API calls
+requests>=2.28.0
+
+# Configuration management
+pyyaml>=6.0
+
+# Logging and utilities
+logging
+
+# Optional: For enhanced data analysis
+seaborn>=0.11.0
+
+# Optional: For advanced mathematical computations
+scikit-learn>=1.1.0
+
+# Optional: For statistical analysis
+statsmodels>=0.13.0
+
+# Development dependencies (optional)
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=22.0.0
+flake8>=5.0.0 
