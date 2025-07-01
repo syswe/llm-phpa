@@ -12,31 +12,7 @@ Traditional Kubernetes autoscaling relies on reactive heuristic methods that fai
 
 The research framework consists of three interconnected modules that collectively establish a comprehensive approach to intelligent autoscaling:
 
-```mermaid
-graph TB
-    A[1. Dataset Generation] --> B[2. ML Model Training]
-    B --> C[3. LLM Pattern Recognition]
-    C --> D[PHPA Framework]
-    A --> D
-    
-    subgraph "Module 1: Pattern Generation"
-        A1[Mathematical Pattern Models]
-        A2[Synthetic Data Generation]
-        A3[Statistical Validation]
-    end
-    
-    subgraph "Module 2: ML Training"
-        B1[CPU-Optimized Models]
-        B2[GPU-Accelerated Models]
-        B3[Hyperparameter Optimization]
-    end
-    
-    subgraph "Module 3: LLM Integration"
-        C1[Pattern Recognition]
-        C2[Model Recommendation]
-        C3[Automated Analysis]
-    end
-```
+![phpa-diagram](phpa-diagram.png)
 
 ## 📊 Key Research Contributions
 
@@ -84,20 +60,17 @@ phpa/
 │   │   ├── patterns/              # Six pattern implementations
 │   │   ├── config/                # Configuration management
 │   │   └── utils/                 # Utilities and plotting
-│   ├── 4-pattern_taxonomy.tex     # Academic paper section
 │   └── README.md                  # Detailed module documentation
 │
 ├── 2-ml-training/                 # Module 2: ML Model Training Framework
 │   ├── scripts/                   # Training and evaluation scripts
 │   │   ├── cpu-models/           # Production-ready CPU models
 │   │   └── gpu-models/           # Advanced GPU-accelerated models
-│   ├── 5-model_selection.tex     # Academic paper section
 │   └── README.md                 # Detailed module documentation
 │
 ├── 3-llm-pattern-recognition/     # Module 3: LLM Integration System
 │   ├── scripts/                   # LLM evaluation and benchmarking
 │   ├── config.yaml.example       # Configuration template
-│   ├── 6-llm_detection.tex      # Academic paper section
 │   └── README.md                 # Detailed module documentation
 │
 ├── sections-en/                   # Academic Paper Sections
@@ -106,7 +79,6 @@ phpa/
 │   ├── 8-discussion.tex          # Critical analysis and implications
 │   ├── 9-conclusion.tex          # Conclusions and future directions
 │   ├── 10-acknowledgment.tex     # Acknowledgments
-│   └── main.tex                  # LaTeX document structure
 │
 └── README.md                     # This comprehensive overview
 ```
