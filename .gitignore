@@ -29,3 +29,10 @@ __pycache__/
 # latex
 
 *.aux
+
+# kaggle
+kaggle/
+
+datasets/
+
+results/

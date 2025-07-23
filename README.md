@@ -17,7 +17,7 @@ The research framework consists of three interconnected modules that collectivel
 ## 📊 Key Research Contributions
 
 ### 1. **Comprehensive Pattern Taxonomy** (Module 1)
-- **Six mathematically-formulated pattern types** covering the full spectrum of production workload behaviors
+- **Six mathematically-formulated pattern types** covering the full spectrum of real-world workload behaviors
 - **Over 2 million data points** across 600 distinct scenarios for robust algorithm evaluation
 - **Real-world calibration** validated against NASA web servers, FIFA World Cup datasets, and cloud application logs
 - **Statistical rigor** with 15-minute granularity over 35-day periods with realistic Kubernetes constraints
@@ -25,7 +25,7 @@ The research framework consists of three interconnected modules that collectivel
 ### 2. **Advanced Model Selection Framework** (Module 2)
 - **37.4% average improvement** in forecasting accuracy through pattern-specific model selection
 - **Seven CPU-optimized models** with comprehensive hyperparameter optimization
-- **Production-ready performance** with training times 0.02-0.61s, memory usage 42-210MB
+- **Research performance benchmarks** with training times 0.02-0.61s, memory usage 42-210MB
 - **Advanced optimization strategies** including temporal cross-validation and early stopping
 
 ### 3. **LLM-Powered Pattern Recognition** (Module 3)
@@ -64,7 +64,7 @@ phpa/
 │
 ├── 2-ml-training/                 # Module 2: ML Model Training Framework
 │   ├── scripts/                   # Training and evaluation scripts
-│   │   ├── cpu-models/           # Production-ready CPU models
+│   │   ├── cpu-models/           # Research-validated CPU models
 │   │   └── gpu-models/           # Advanced GPU-accelerated models
 │   └── README.md                 # Detailed module documentation
 │
@@ -88,7 +88,7 @@ phpa/
 ### Prerequisites
 - Python 3.8+
 - Docker (optional, for containerized deployment)
-- Kubernetes cluster (for production testing)
+- Kubernetes cluster (for research validation)
 - API keys for LLM providers (Gemini, Qwen, Grok)
 
 ### 1. Dataset Generation
@@ -115,6 +115,8 @@ python scripts/enhanced_benchmark.py --llm all --method all
 
 ### Empirical Performance Metrics
 
+> **⚠️ Important Note**: The performance metrics below are from the original master thesis research with extensive hyperparameter optimization. Users running the demo code or tutorials in this repository may observe different results due to simplified configurations optimized for demonstration purposes and computational efficiency.
+
 | Component | Metric | Result |
 |-----------|--------|--------|
 | **Pattern-Specific vs Universal** | MAE Improvement | **37.4%** |
@@ -126,6 +128,8 @@ python scripts/enhanced_benchmark.py --llm all --method all
 
 ### Pattern-Model Optimization Results
 
+> **🔬 Research Context**: The results below represent optimal performance achieved through comprehensive hyperparameter tuning in the thesis research. Demo implementations use simplified parameter sets for faster execution and broader compatibility.
+
 | Pattern Type | Optimal Model | Win Rate | MAE | Optimization Strategy |
 |--------------|---------------|----------|-----|----------------------|
 | **Growing** | VAR | 96% | 2.44 | BIC lag selection |
@@ -134,6 +138,72 @@ python scripts/enhanced_benchmark.py --llm all --method all
 | **Burst** | GBDT | 42% | 2.13 | Histogram-based construction |
 | **Chaotic** | GBDT | 38% | 2.45 | Advanced regularization |
 | **Stepped** | GBDT | 35% | 1.97 | Depth optimization |
+
+#### Performance Variation Notice
+📊 **Expected Result Differences**: When running the provided demo code, users should expect:
+- **Performance Variations**: ±10-30% difference in accuracy metrics due to simplified hyperparameters
+- **Training Time**: May be longer in demo environments without optimization
+- **Hardware Dependencies**: Results vary significantly based on CPU/memory specifications
+- **Random Seed Effects**: Different random initializations may affect reproducibility
+- **Dataset Size**: Demo uses smaller datasets for faster execution
+
+## 🧪 Kaggle Demo Lab & Genuine Research Dataset
+
+### 1. Kaggle Demo Lab (Sample Code & Quick Test)
+
+We provide a ready-to-use Kaggle demo environment for rapid testing of the PHPA framework. This environment is ideal for users who want to quickly try out the core functionalities and LLM integration in a notebook or script-based workflow.
+
+- **Scope:**
+  - Demo versions of all main modules (pattern generation, ML training, LLM evaluation)
+  - Jupyter notebooks and script-based quick tests
+  - Automatic fallback: works in demo mode even without API keys
+- **Usage:**
+  - You can work with either the real research dataset (by adding it as a Kaggle Input Dataset) or the built-in demo data
+  - All code and notebooks are located in the `kaggle/` directory
+- **Kaggle Lab Repository:**
+  - [PHPA: Predictive Pod Autoscaling Framework (Kaggle)](https://www.kaggle.com/code/cnbrkdmn/phpa-predictive-pod-autoscaling-framework)
+
+#### Quick Start (Kaggle)
+```python
+import os, pandas as pd
+DATA_PATH = '/kaggle/input/phpa-research-datasets'
+if os.path.exists(DATA_PATH):
+    csv_files = [f for f in os.listdir(DATA_PATH) if f.endswith('.csv')]
+    print(f'Total CSV files available: {len(csv_files)}')
+    train_files = [f for f in csv_files if f.endswith('_train.csv')]
+    if train_files:
+        sample_file = train_files[0]
+        df = pd.read_csv(f"{DATA_PATH}/{sample_file}")
+        print(df.head())
+```
+
+### 2. Genuine MSc Research Dataset (Kaggle)
+
+The **official research dataset** used in the MSc thesis, containing 200+ unique workload patterns and over 500,000 time-series records for Kubernetes pod autoscaling, is available on Kaggle for academic and practical use.
+
+- **Scope:**
+  - 1200 CSV files (train/test split)
+  - 6 pattern types: Stepped, Burst, Seasonal, Growing, OnOff, Chaotic
+  - 15-minute sampling, ≈2,690 train + ≈674 test rows per file
+  - ≈500,000 total time-series points
+  - All parameters are clearly encoded in the file names
+- **Kaggle Dataset Link:**
+  - [PHPA Research Datasets - k8s Workload Patterns (Kaggle)](https://www.kaggle.com/datasets/cnbrkdmn/phpa-research-datasets)
+- **License:** MIT (free for academic and commercial use)
+
+#### File Structure & Example Usage
+```python
+import pandas as pd, os
+DATA_DIR = '/kaggle/input/phpa-research-datasets'
+file = [f for f in os.listdir(DATA_DIR) if f.endswith('_train.csv')][0]
+df = pd.read_csv(os.path.join(DATA_DIR, file), parse_dates=['timestamp'])
+print(df.head())
+```
+
+#### Kaggle Research Dataset
+> Kaggle Dataset: [cnbrkdmn/phpa-research-datasets](https://www.kaggle.com/datasets/cnbrkdmn/phpa-research-datasets)
+
+---
 
 ## 🔬 Scientific Methodology
 
@@ -177,7 +247,7 @@ Each module contains comprehensive README files with:
 4. **Optimization Strategies**: Enhance hyperparameter optimization frameworks
 
 ### Research Extensions
-- **Real-world Validation**: Production deployment studies
+- **Real-world Validation**: Academic research studies
 - **Advanced Prompt Engineering**: Sophisticated LLM interaction strategies
 - **Federated Learning**: Collaborative model improvement across organizations
 - **Multi-objective Optimization**: Cost-performance-accuracy optimization
@@ -188,7 +258,7 @@ If you use this research framework in your work, please cite:
 
 ```bibtex
 @mastersthesis{duman2025phpa,
-  title={KUBERNETES ÜZERİNDE TAHMİN ALGORİTMALARI İLE YÜKSEK ÖLÇEKLENEBİLİRLİK},
+  title={Developing a Workload Pattern-aware Framework for Auto-Scaling on Kubernetes with Large Language Model Integration},
   author={Duman, Canberk and Eken, Süleyman},
   school={Kocaeli University},
   year={2025},
@@ -203,7 +273,7 @@ This research framework is released under the MIT License. The comprehensive doc
 ## Future Research Directions
 
 ### Immediate Opportunities
-- **Production Validation**: Real-world deployment studies across diverse environments
+- **Research Validation**: Academic studies across diverse test environments
 - **Advanced LLM Integration**: Sophisticated prompt engineering and ensemble methods
 - **Pattern Evolution**: Dynamic pattern transition detection and adaptation
 - **Cost Optimization**: Economic efficiency and resource utilization analysis
