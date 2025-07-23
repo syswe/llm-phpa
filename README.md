@@ -188,7 +188,7 @@ The **official research dataset** used in the MSc thesis, containing 200+ unique
   - ≈500,000 total time-series points
   - All parameters are clearly encoded in the file names
 - **Kaggle Dataset Link:**
-  - [PHPA Research Datasets - k8s Workload Patterns (Kaggle)](https://www.kaggle.com/datasets/cnbrkdmn/phpa-research-datasets)
+  - [PHPA Research Datasets - k8s Workload Patterns (Kaggle)](https://www.kaggle.com/datasets/cnbrkdmn/predictive-horizontal-pod-autoscaling-phpa)
 - **License:** MIT (free for academic and commercial use)
 
 #### File Structure & Example Usage
