@@ -1,14 +1,14 @@
 # Predictive Horizontal Pod Autoscaling: A Pattern-Aware Framework with Large Language Model Integration
 
-## 🎯 Project Overview
+## Project Overview
 
 This repository contains the complete implementation and research framework for **"LLM Pattern Recognition for Predictive Horizontal Pod Autoscaling"** - a comprehensive master thesis research project that establishes foundational components for intelligent Kubernetes autoscaling through integration of advanced machine learning techniques, sophisticated hyperparameter optimization frameworks, and automated pattern recognition capabilities.
 
-### 🔬 Research Context
+### Research Context
 
 Traditional Kubernetes autoscaling relies on reactive heuristic methods that fail to capture complex temporal dependencies in modern microservices workloads. This research addresses these limitations through the development of Predictive Horizontal Pod Autoscaling (PHPA) incorporating advanced hyperparameter optimization frameworks that anticipate future resource requirements before they manifest as performance bottlenecks.
 
-## 🏗️ System Architecture
+## System Architecture
 
 The research framework consists of three interconnected modules that collectively establish a comprehensive approach to intelligent autoscaling:
 
@@ -301,7 +301,7 @@ Each module contains comprehensive README files with:
 - Performance benchmarks
 - Research methodology explanations
 
-## 🤝 Contributing and Extension
+## Contributing and Extension
 
 ### Adding New Components
 1. **Pattern Types**: Extend `BasePattern` interface for additional temporal behaviors
@@ -354,7 +354,7 @@ This research framework is released under the MIT License. The comprehensive doc
 **Institution**: Kocaeli University, Department of Information Systems Engineering  
 **Year**: 2025
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 This research is supported by **TÜBİTAK 1005** (Türkiye Bilimsel ve Teknolojik Araştırma Kurumu).
 
