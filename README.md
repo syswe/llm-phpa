@@ -134,10 +134,47 @@ python scripts/enhanced_benchmark.py --llm all --method all
 |--------------|---------------|----------|-----|----------------------|
 | **Growing** | VAR | 96% | 2.44 | BIC lag selection |
 | **On/Off** | CatBoost | 62% | 0.87 | Ordered boosting |
-| **Seasonal** | GBDT | 45% | 1.89 | Learning rate-depth optimization |
-| **Burst** | GBDT | 42% | 2.13 | Histogram-based construction |
-| **Chaotic** | GBDT | 38% | 2.45 | Advanced regularization |
-| **Stepped** | GBDT | 35% | 1.97 | Depth optimization |
+| **Seasonal** | GBDT | 48% | 0.10 | Learning rate-depth optimization |
+| **Burst** | GBDT | 44% | 0.16 | Histogram-based construction |
+| **Chaotic** | GBDT | 67% | 1.81 | Advanced regularization |
+| **Stepped** | GBDT | 54% | 0.19 | Depth optimization |
+
+### Detailed Performance Metrics
+
+#### Root Mean Square Error (RMSE) by Model and Pattern Type
+
+| Model | Burst | Chaotic | Growing | On/Off | Seasonal | Stepped |
+|-------|-------|---------|---------|--------|----------|---------|
+| **GBDT** | **0.88** | **2.88** | 11.26 | 2.28 | **0.31** | **0.86** |
+| XGBoost | 0.88 | 3.09 | 11.76 | 2.42 | 0.32 | 0.94 |
+| LightGBM | 1.08 | 3.54 | 11.75 | 2.50 | 0.38 | 1.12 |
+| CatBoost | 1.05 | 4.74 | 26.67 | **1.81** | 0.39 | 2.14 |
+| Prophet | 11.60 | 12.76 | 8.92 | 11.93 | 2.01 | 4.16 |
+| VAR | 7.38 | 36.34 | **2.90** | 23.73 | 4.23 | 19.65 |
+
+#### Mean Absolute Percentage Error (MAPE) by Model and Pattern Type
+
+| Model | Burst | Chaotic | Growing | On/Off | Seasonal | Stepped |
+|-------|-------|---------|---------|--------|----------|---------|
+| **GBDT** | **0.40%** | **3.39%** | 10.29% | 1.35% | **0.32%** | **0.61%** |
+| XGBoost | 0.41% | 3.46% | 10.74% | 1.47% | 0.35% | 0.63% |
+| LightGBM | 0.81% | 3.71% | 10.80% | 1.50% | 0.49% | 0.92% |
+| CatBoost | 0.49% | 7.51% | 26.91% | **1.22%** | 0.52% | 4.13% |
+| Prophet | 31.54% | 24.93% | 6.34% | 3.75% | 4.70% | 8.44% |
+| VAR | 14.22% | 9.80% | **2.76%** | 2.70% | 10.45% | 53.19% |
+
+#### Coefficient of Determination (R²) by Model and Pattern Type
+
+| Model | Burst | Chaotic | Growing | On/Off | Seasonal | Stepped |
+|-------|-------|---------|---------|--------|----------|---------|
+| **GBDT** | **0.998** | **0.966** | 0.897 | 0.987 | **0.999** | **0.996** |
+| XGBoost | 0.998 | 0.965 | 0.892 | 0.985 | 0.998 | 0.995 |
+| LightGBM | 0.992 | 0.963 | 0.891 | 0.985 | 0.997 | 0.991 |
+| CatBoost | 0.997 | 0.925 | 0.731 | **0.988** | 0.996 | 0.959 |
+| Prophet | 0.685 | 0.751 | 0.937 | 0.963 | 0.953 | 0.916 |
+| VAR | 0.858 | 0.902 | **0.972** | 0.973 | 0.895 | 0.468 |
+
+> **Key Insights**: GBDT achieves the highest R² scores across most pattern types (0.996–0.999 for Seasonal, Burst, and Stepped). VAR demonstrates exceptional performance for Growing patterns (R²=0.972). CatBoost excels on On/Off patterns but shows weakness on Growing patterns (R²=0.731).
 
 #### Performance Variation Notice
 📊 **Expected Result Differences**: When running the provided demo code, users should expect:
@@ -146,6 +183,32 @@ python scripts/enhanced_benchmark.py --llm all --method all
 - **Hardware Dependencies**: Results vary significantly based on CPU/memory specifications
 - **Random Seed Effects**: Different random initializations may affect reproducibility
 - **Dataset Size**: Demo uses smaller datasets for faster execution
+
+### Real-World Dataset Validation
+
+To validate model performance beyond synthetic scenarios, we evaluated selected models on two well-established real-world datasets:
+
+- **NASA HTTP Access Logs**: 3.46 million requests from Kennedy Space Center (July–August 1995), aggregated into 5-minute intervals yielding 16,364 samples
+- **Alibaba Cluster Trace v2018**: Machine utilization data from a production cluster over 8 days, sampled from 20 machines with 2,240 intervals
+
+#### Model Performance on Real-World Datasets
+
+| Model | NASA MAE | NASA RMSE | NASA MAPE | NASA R² | Alibaba MAE | Alibaba RMSE | Alibaba MAPE | Alibaba R² |
+|-------|----------|-----------|-----------|---------|-------------|--------------|--------------|------------|
+| **CatBoost** | **0.033** | **0.19** | **0.40%** | **0.998** | 0.224 | 0.59 | 1.94% | 0.981 |
+| **GBDT** | 0.163 | 0.49 | 1.36% | 0.986 | **0.085** | **0.31** | **0.75%** | **0.993** |
+| XGBoost | 0.251 | 0.56 | 2.34% | 0.977 | 0.101 | 0.35 | 0.86% | 0.991 |
+| LightGBM | 0.450 | 0.73 | 5.26% | 0.947 | 0.128 | 0.38 | 1.23% | 0.988 |
+| VAR | 6.353 | 7.84 | 79.21% | 0.428 | 1.605 | 2.06 | 18.61% | 0.814 |
+| Baseline | 8.655 | 11.49 | 56.21% | 0.184 | 1.946 | 2.55 | 20.46% | 0.796 |
+
+> **Key Findings**: 
+> - Tree-based gradient boosting models demonstrate superior performance on real-world data
+> - CatBoost achieves optimal performance on NASA (MAPE: 0.40%, R²: 0.998)
+> - GBDT excels on Alibaba trace (MAPE: 0.75%, R²: 0.993)
+> - All gradient boosting models achieve sub-2% MAPE on Alibaba, reflecting stable datacenter patterns
+> - VAR struggles with real-world non-linear dynamics (NASA R²: 0.428, MAPE: 79.21%)
+
 
 ## 🧪 Kaggle Demo Lab & Genuine Research Dataset
 
@@ -161,7 +224,7 @@ We provide a ready-to-use Kaggle demo environment for rapid testing of the PHPA 
   - You can work with either the real research dataset (by adding it as a Kaggle Input Dataset) or the built-in demo data
   - All code and notebooks are located in the `kaggle/` directory
 - **Kaggle Lab Repository:**
-  - [PHPA: Predictive Pod Autoscaling Framework (Kaggle)](https://www.kaggle.com/code/cnbrkdmn/phpa-predictive-pod-autoscaling-framework)
+  - [PHPA: Predictive Pod Autoscaling Framework (Kaggle)](https://www.kaggle.com/datasets/cnbrkdmn/predictive-horizontal-pod-autoscaling-phpa)
 
 #### Quick Start (Kaggle)
 ```python
@@ -188,7 +251,7 @@ The **official research dataset** used in the MSc thesis, containing 200+ unique
   - ≈500,000 total time-series points
   - All parameters are clearly encoded in the file names
 - **Kaggle Dataset Link:**
-  - [PHPA Research Datasets - k8s Workload Patterns (Kaggle)](https://www.kaggle.com/datasets/cnbrkdmn/predictive-horizontal-pod-autoscaling-phpa)
+  - [PHPA Research Datasets - k8s Workload Patterns (Kaggle)](https://www.kaggle.com/datasets/cnbrkdmn/phpa-research-datasets)
 - **License:** MIT (free for academic and commercial use)
 
 #### File Structure & Example Usage

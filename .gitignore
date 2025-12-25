@@ -36,3 +36,6 @@ kaggle/
 datasets/
 
 results/
+
+.tsv
+venv*/
