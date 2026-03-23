@@ -359,3 +359,28 @@ This research framework is released under the MIT License. The comprehensive doc
 This research is supported by **TÜBİTAK 1005** (Türkiye Bilimsel ve Teknolojik Araştırma Kurumu).
 
 For questions, issues, or collaboration opportunities, please refer to the detailed documentation in each module or contact the research team through the academic institution.
+
+## Associated Publication
+
+This repository contains code, notebooks, and resources related to the following peer-reviewed paper:
+
+**Duman, C., & Eken, S.** (2026). From Reactive to Predictive: A Pattern-Aware Framework for Kubernetes Autoscaling with Large Language Model Integration.  
+*Journal of Systems and Software*, 112861.  
+Available online 20 March 2026 (In Press, Journal Pre-proof).  
+**DOI:** [https://doi.org/10.1016/j.jss.2026.112861](https://doi.org/10.1016/j.jss.2026.112861)
+
+### Citation (BibTeX)
+```bibtex
+@article{duman2026reactive,
+  author    = {Canberk Duman and Süleyman Eken},
+  title     = {From Reactive to Predictive: A Pattern-Aware Framework for Kubernetes Autoscaling with Large Language Model Integration},
+  journal   = {Journal of Systems and Software},
+  volume    = {},
+  number    = {},
+  pages     = {112861},
+  year      = {2026},
+  doi       = {10.1016/j.jss.2026.112861},
+  url       = {https://doi.org/10.1016/j.jss.2026.112861},
+  note      = {In Press, Available online 20 March 2026}
+}
+```
