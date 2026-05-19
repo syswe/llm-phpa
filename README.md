@@ -366,7 +366,6 @@ This repository contains code, notebooks, and resources related to the following
 
 **Duman, C., & Eken, S.** (2026). From Reactive to Predictive: A Pattern-Aware Framework for Kubernetes Autoscaling with Large Language Model Integration.  
 *Journal of Systems and Software*, 112861.  
-Available online 20 March 2026 (In Press, Journal Pre-proof).  
 **DOI:** [https://doi.org/10.1016/j.jss.2026.112861](https://doi.org/10.1016/j.jss.2026.112861)
 
 ### Citation (BibTeX)
@@ -380,7 +379,6 @@ Available online 20 March 2026 (In Press, Journal Pre-proof).
   pages     = {112861},
   year      = {2026},
   doi       = {10.1016/j.jss.2026.112861},
-  url       = {https://doi.org/10.1016/j.jss.2026.112861},
-  note      = {In Press, Available online 20 March 2026}
+  url       = {https://doi.org/10.1016/j.jss.2026.112861}
 }
 ```
